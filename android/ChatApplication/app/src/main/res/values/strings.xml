@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Chat Application</string>
+    <string name="label_tulis_pesan">Tulis pesan</string>
+    <string name="label_kirim">Kirim</string>
+    <string name="label_pembatas">:</string>
+    <string name="label_nama">Lani</string>
+    <string name="label_pesan">Halo</string>
+    <string name="label_waktu">AM</string>
 </resources>

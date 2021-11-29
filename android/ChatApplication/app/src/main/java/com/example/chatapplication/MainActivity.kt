@@ -17,40 +17,99 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.content.getSystemService
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.chatapplication.adapters.ChatAdapter
+import com.example.chatapplication.models.Chat
+import com.example.chatapplication.services.ApiService
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.ktx.messaging
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var webView: WebView
-    private lateinit var textName: EditText
+    //private lateinit var textName: EditText
     private lateinit var textPesan: EditText
     private lateinit var buttonKirim: Button
     private var TAG = "ChatApplication"
     private var CHANNEL_ID = "channel_lan"
+    lateinit var token: String
+
+    // 29
+    private lateinit var recyclerView: RecyclerView
+
+    private var lani_m: String = "cjwQWWmdTk2t-zra90qIDd:APA91bHRb6NAM3YpeIZX7L-XYAXbOvncGC_kVafajQ14FqQmESzapZmnJxrF8YbVwI9C_4uY5AJH0vDPh2N6Z_x2uQYf_pjkLXk1A3Jp-AztxsGg_ja-PUyjejxagi8R_d0BgE24TSp1"
+    private var siti_l: String = "emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         webView = findViewById(R.id.web_chat)
-        textName = findViewById(R.id.text_name)
+        //textName = findViewById(R.id.text_name)
         textPesan = findViewById(R.id.text_pesan)
         buttonKirim = findViewById(R.id.button_kirim)
 
+        // 29
+        recyclerView = findViewById(R.id.recycler_chat)
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://expert-sys-fc.000webhostapp.com")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val api = retrofit.create(ApiService::class.java)
+
+        api.fetchAllChats().enqueue(object: Callback<List<Chat>> {
+            override fun onResponse(call: Call<List<Chat>>, response: Response<List<Chat>>) {
+                showData(response.body()!!)
+            }
+
+            override fun onFailure(call: Call<List<Chat>>, t: Throwable) {
+                Log.d(TAG, "OnFailure")
+            }
+
+        })
+
+        // ga kepake, invisible
         webView.loadUrl("https://expert-sys-fc.000webhostapp.com/")
+        //webView.settings.javaScriptEnabled = true
 
         createNotificationChannel()
         getToken()
 
         buttonKirim.setOnClickListener {
-            var name: String = textName.text.toString()
+            //var name: String = textName.text.toString()
             var pesan: String = textPesan.text.toString()
 
-            webView.loadUrl("https://expert-sys-fc.000webhostapp.com/index.php?nama=" + name + "&chat=" + pesan + "&submit=kirim#")
-            Toast.makeText(baseContext, "Pesan dikirim.", Toast.LENGTH_SHORT).show()
-            onRestart()
+            if (token == lani_m) {
+                webView.loadUrl("https://expert-sys-fc.000webhostapp.com/index.php?nama=Lani" + "&chat=" + pesan + "&submit=kirim#")
+                Toast.makeText(baseContext, "Pesan dikirim.", Toast.LENGTH_SHORT).show()
+                onRestart()
+            }
+            if (token == siti_l) {
+                webView.loadUrl("https://expert-sys-fc.000webhostapp.com/index.php?nama=Siti" + "&chat=" + pesan + "&submit=kirim#")
+                Toast.makeText(baseContext, "Pesan dikirim.", Toast.LENGTH_SHORT).show()
+                onRestart()
+            }
+            else {
+                //Toast.makeText(baseContext, "Something went wrong.", Toast.LENGTH_SHORT).show()
+                Log.d(TAG, "User invalid.")
+            }
+        }
+    }
+
+    private fun showData(chat: List<Chat>) {
+        recyclerView.apply {
+            recyclerView.setHasFixedSize(true)
+            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = ChatAdapter(chat, token)
         }
     }
 
@@ -66,12 +125,12 @@ class MainActivity : AppCompatActivity() {
                 return@OnCompleteListener
             }
             // Get new FCM registration token
-            val token = task.result
-            val msg = token.toString()
+            token = task.result.toString()
+            val msg = token
 
             Log.e(TAG, "Token : $msg")
             //System.out.println("Fetching FCM success: " + token)
-            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
         })
 
         Firebase.messaging.subscribeToTopic("lan123")
@@ -81,7 +140,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d(TAG, "Failed to subscribe")
                 }
                 Log.d(TAG, msg)
-                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -98,4 +157,6 @@ class MainActivity : AppCompatActivity() {
             notificationManager.createNotificationChannel(channel)
         }
     }
+
+
 }

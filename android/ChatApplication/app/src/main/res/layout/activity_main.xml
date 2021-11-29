@@ -12,26 +12,36 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/text_container"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/recycler_chat"
+        app:layout_constraintBottom_toTopOf="@+id/text_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/web_chat"
-        app:layout_constraintBottom_toTopOf="@+id/text_pesan"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_chat"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp">
 
         <EditText
-            android:id="@+id/text_name"
+            android:id="@+id/text_pesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_marginEnd="8dp"
-            android:hint="Nama"
-            android:layout_toLeftOf="@+id/button_kirim">
+            android:layout_toLeftOf="@+id/button_kirim"
+            android:hint="@string/label_tulis_pesan"
+            android:textSize="16sp">
         </EditText>
 
         <Button
@@ -39,22 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="Kirim"
-            >
+            android:backgroundTint="@color/hijau"
+            android:text="@string/label_kirim">
         </Button>
     </RelativeLayout>
-
-    <EditText
-        android:id="@+id/text_pesan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/text_container"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="16sp"
-        android:hint="Tulis pesan"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp">
-    </EditText>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
