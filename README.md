@@ -14,6 +14,6 @@ https://youtu.be/0_xxObdHNMc
 
 
 ## Member
-- Lisa Arief (1313618033)
-- Muhammad Asyraf Amanullah (1313618010)
 - Novitasari (1313618009)
+- Muhammad Asyraf Amanullah (1313618010)
+- Lisa Arief (1313618033)
