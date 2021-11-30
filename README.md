@@ -1,8 +1,8 @@
 # ChatApp
 ## App Features
 - Facilitate chatting between two persons
-- There is distinction between sender and recipient
 - The message as Firebase Notification and redirect into the Chat Interface
+- There is distinction between sender and recipient
 
 ## Link Stream Record App Usage
 https://youtu.be/0_xxObdHNMc
