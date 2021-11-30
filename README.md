@@ -8,7 +8,7 @@ https://youtu.be/0_xxObdHNMc
 
 ## Overview App
 Notification at Lani's Phone
-https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg
+![Notif Hp Lani](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg)
 
 
 
