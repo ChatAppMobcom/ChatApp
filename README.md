@@ -8,7 +8,7 @@ https://youtu.be/0_xxObdHNMc
 
 ## Overview App
 ### Notification at Lani's Phone
-![Notif Hp Lani](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg)
+<a href="https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg"><img src="https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg" align="left" height="400" width="250"></a>
 ### Interface at Lani's Phone
 ![UI lani](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/UI%20Lani.jpeg)
 ### Notification at Siti's Phone
