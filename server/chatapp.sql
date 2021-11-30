@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2021 at 09:08 AM
+-- Generation Time: Nov 29, 2021 at 12:14 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -31,31 +31,18 @@ CREATE TABLE `chat` (
   `id` int(10) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `chat` varchar(255) NOT NULL,
-  `waktu` varchar(20) NOT NULL
+  `waktu` varchar(20) NOT NULL,
+  `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `chat`
 --
 
-INSERT INTO `chat` (`id`, `nama`, `chat`, `waktu`) VALUES
-(31, 'Lani', 'hai, ini lani', '2021-11-26, 08:20 am'),
-(32, 'Siti', 'halo lani, ini siti', '2021-11-26, 08:21 am'),
-(33, 'Lani', 'halo, tes lagi', '2021-11-26, 08:22 am'),
-(34, 'Siti', 'Halo lg', '2021-11-26, 08:22 am'),
-(35, 'Siti', 'tes lagi', '2021-11-26, 09:04 am'),
-(36, 'Lani', 'halo2', '2021-11-26, 09:04 am'),
-(37, 'siti', 'siti', '2021-11-26, 11:50 am'),
-(38, 'Siti', 'siti', '2021-11-26, 11:51 am'),
-(39, 'siti', 'testlink', '2021-11-26, 11:51 am'),
-(40, 'siti', 'alai', '2021-11-26, 12:34 pm'),
-(41, 'siti', 'alai', '2021-11-27, 05:08 am'),
-(42, 'lani', 'kok2', '2021-11-27, 05:09 am'),
-(43, 'siti', 'alai33', '2021-11-27, 05:10 am'),
-(44, 'siti', 'haihaiiiiiiiiii', '2021-11-27, 05:10 am'),
-(45, 'siti', 'tesssslagi', '2021-11-27, 05:15 am'),
-(46, 'siti', 'alai', '2021-11-27, 05:16 am'),
-(47, 'siti', 'alai', '2021-11-27, 05:27 am');
+INSERT INTO `chat` (`id`, `nama`, `chat`, `waktu`, `token`) VALUES
+(52, 'siti', 'testttttt', '2021-11-29, 04:48 am', 'emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX'),
+(53, 'siti', 'test', '2021-11-29, 04:49 am', 'emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX'),
+(54, 'lani', 'alo lani', '2021-11-29, 04:49 am', 'cjwQWWmdTk2t-zra90qIDd:APA91bHRb6NAM3YpeIZX7L-XYAXbOvncGC_kVafajQ14FqQmESzapZmnJxrF8YbVwI9C_4uY5AJH0vDPh2N6Z_x2uQYf_pjkLXk1A3Jp-AztxsGg_ja-PUyjejxagi8R_d0BgE24TSp1');
 
 --
 -- Indexes for dumped tables
@@ -75,7 +62,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

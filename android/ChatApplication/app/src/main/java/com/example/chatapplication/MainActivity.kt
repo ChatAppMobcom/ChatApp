@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
     // 29
     private lateinit var recyclerView: RecyclerView
 
-    private var lani_m: String = "cjwQWWmdTk2t-zra90qIDd:APA91bHRb6NAM3YpeIZX7L-XYAXbOvncGC_kVafajQ14FqQmESzapZmnJxrF8YbVwI9C_4uY5AJH0vDPh2N6Z_x2uQYf_pjkLXk1A3Jp-AztxsGg_ja-PUyjejxagi8R_d0BgE24TSp1"
-    private var siti_l: String = "emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX"
+    private var lani_m: String = "eizg0lRbQvG68loSiYT05Q:APA91bETJKa4cd_gB2zpvEZr2n90X8foQ-f6N1QEl51PYEcaiALLixR4fSXWhpMvzmKjptUmIO2btVbWAee--mHqffYLn-jg4-PrTsADq_I0DJki-QC34WdpvNM7ON9gYZhipkbqLd31"
+    private var siti_l: String = "fcrtTDHySh6l2Ll-eli4gt:APA91bFgeK2QtUrRMn2Rqi-I5ny5Sf_-BtvE4ANsetH0n3MhW2ADh6tK69YHVa0pwQy1sY1BhHmG_meNBETrce7zegfdXHrVSsU1OJgGPweRLboOBM9NM5AhVx6QFVQ0xuz0Z5QmXQif"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,8 @@ class MainActivity : AppCompatActivity() {
 
         webView = findViewById(R.id.web_chat)
         //textName = findViewById(R.id.text_name)
-        textPesan = findViewById(R.id.text_pesan)
+        textPesan =
+ findViewById(R.id.text_pesan)
         buttonKirim = findViewById(R.id.button_kirim)
 
         // 29
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                 onRestart()
             }
             else {
-                //Toast.makeText(baseContext, "Something went wrong.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Something went wrong.", Toast.LENGTH_SHORT).show()
                 Log.d(TAG, "User invalid.")
             }
         }
@@ -129,8 +130,8 @@ class MainActivity : AppCompatActivity() {
             val msg = token
 
             Log.e(TAG, "Token : $msg")
-            //System.out.println("Fetching FCM success: " + token)
-            //Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+            System.out.println("Fetching FCM success: " + token)
+            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
         })
 
         Firebase.messaging.subscribeToTopic("lan123")
@@ -140,7 +141,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d(TAG, "Failed to subscribe")
                 }
                 Log.d(TAG, msg)
-                //Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             }
     }
 

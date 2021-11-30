@@ -2,12 +2,6 @@
     <?php
         require_once("notify.php");
 
-        $to = "emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX";
-        $data = array(
-            'title' => 'Notification',
-            'body' => "You've got a new message!"
-        );
-
         $localhost = "localhost";
         $db_username = "root";
         $db_password = "";
@@ -109,11 +103,17 @@
 
         elseif (strtolower($_GET['nama']) == "lani") {
             //Step 2. SQL Query to save the data into database
-            $sql = "INSERT INTO chat (nama, chat, waktu) VALUES ('$nama', '$chat', '$waktu')
+            $token = "cjwQWWmdTk2t-zra90qIDd:APA91bHRb6NAM3YpeIZX7L-XYAXbOvncGC_kVafajQ14FqQmESzapZmnJxrF8YbVwI9C_4uY5AJH0vDPh2N6Z_x2uQYf_pjkLXk1A3Jp-AztxsGg_ja-PUyjejxagi8R_d0BgE24TSp1";
+            $sql = "INSERT INTO chat (nama, chat, waktu, token) VALUES ('$nama', '$chat', '$waktu', '$token')
             ";
             $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
             if ($res) {
+                $to = "emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX";
+                $data = array(
+                    'title' => 'Siti',
+                    'body' => "You've got a new message!"
+                );
                 notify($to, $data);
                 ?>
                 <script language="JavaScript">
@@ -127,11 +127,16 @@
 
         elseif (strtolower($_GET['nama']) == "siti") {
             //Step 2. SQL Query to save the data into database
-            $sql = "INSERT INTO chat (nama, chat, waktu) VALUES ('$nama', '$chat', '$waktu')
+            $token = "emHSTF25QQuQv2BbN2z_AX:APA91bFGKFVP8hF1pUYpOOcfQaNgcNDhMR5-Pel7fTW8IyqDY2L3TivVhgxlmqiQA57GwFJPObroKUtABghmGPliOQHiWuU4iVi_XPXhZC_h_qHvc4e2iQ8Ai2C6BD1gqsBt9271QCVX";
+            $sql = "INSERT INTO chat (nama, chat, waktu, token) VALUES ('$nama', '$chat', '$waktu', '$token')
             ";
             $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-        
             if ($res) {
+                $to = "cjwQWWmdTk2t-zra90qIDd:APA91bHRb6NAM3YpeIZX7L-XYAXbOvncGC_kVafajQ14FqQmESzapZmnJxrF8YbVwI9C_4uY5AJH0vDPh2N6Z_x2uQYf_pjkLXk1A3Jp-AztxsGg_ja-PUyjejxagi8R_d0BgE24TSp1";
+                $data = array(
+                    'title' => 'Lani',
+                    'body' => "You've got a new message!"
+                );
                 notify($to, $data);
                 ?>
                 <script language="JavaScript">
