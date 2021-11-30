@@ -10,6 +10,9 @@ https://youtu.be/0_xxObdHNMc
 ## Overview App
 ![foto](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/photo-collage.png)
 
+## Server Repo
+Link: https://github.com/ChatAppMobcom/ChatApp-Server
+
 ## Member
 - Novitasari (1313618009)
 - Muhammad Asyraf Amanullah (1313618010)
