@@ -4,6 +4,7 @@
 -  The message as Firebase Notification and redirect into the Chat Interface
 -  Interface ChattApp
 ## Link Stream Record App Usage
+https://youtu.be/0_xxObdHNMc
 
 ## Overview App
 
