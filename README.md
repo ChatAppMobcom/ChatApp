@@ -1,17 +1,25 @@
 # ChatApp
 ## App Features
-- Facilitate chatting between two persons
-- The message as Firebase Notification and redirect into the Chat Interface
-- There is distinction between sender and recipient
-
+- facilitate chatting between two persons
+-  The message as Firebase Notification and redirect into the Chat Interface
+-  Interface ChattApp
 ## Link Stream Record App Usage
 https://youtu.be/0_xxObdHNMc
 
 ## Overview App
-![Notif Hp Siti](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg)
-![UI Siti](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/UI%20Siti.jpeg)
+###Notification at Lani's Phone
+![Notif Hp Lani](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Lani.jpeg)
+###Interface at Lani's Phone
+![UI lani](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/UI%20Lani.jpeg)
+###Notification at Siti's Phone
+![Notif Hp Siti](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/Notif%20Hp%20Siti.jpeg)
+###NInterface at Siti's Phone
+1[UI Siti](https://github.com/ChatAppMobcom/ChatApp/blob/main/overview/UI%20Siti.jpeg)
+
+
+
 
 ## Member
-- Novitasari (1313618009)
-- M Asyraf Amanullah (1313618010)
-- Lisa Arief (1313618033)
+- Lisa Arief
+- M asyraf Amanullah
+- Novitasari
